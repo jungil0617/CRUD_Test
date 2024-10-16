@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시글 작성</title>
+</head>
+<body>
+<h1>새로운 게시글 작성</h1>
+
+<!-- 게시글 작성 폼 -->
+<form th:action="@{/posts}" method="post">
+    <div>
+        <label for="title">게시글 제목:</label>
+        <input type="text" id="title" name="title" placeholder="게시글 제목을 입력하세요" required>
+    </div>
+    <div>
+        <label for="content">게시글 내용:</label>
+        <textarea id="content" name="content" placeholder="게시글 내용을 입력하세요" rows="4" cols="50" required></textarea>
+    </div>
+    <div>
+        <label for="postType">게시글 유형:</label>
+        <select id="postType" name="postType">
+            <option value="DRIVER">운전자</option>
+            <option value="PASSENGER">탑승자</option>
+            <option value="TAXI_GROUP">택시 그룹</option>
+        </select>
+    </div>
+    <div>
+        <label for="departureLocation">출발 장소:</label>
+        <input type="text" id="departureLocation" name="departureLocation" placeholder="출발 장소를 입력하세요" required>
+    </div>
+    <div>
+        <label for="destinationLocation">도착 장소:</label>
+        <input type="text" id="destinationLocation" name="destinationLocation" placeholder="도착 장소를 입력하세요" required>
+    </div>
+    <div>
+        <label for="driverRequirements">운전자 요구사항:</label>
+        <input type="text" id="driverRequirements" name="driverRequirements" placeholder="운전자 요구사항을 입력하세요" required>
+    </div>
+    <div>
+        <label for="currentPassengers">현재 인원:</label>
+        <input type="number" id="currentPassengers" name="currentPassengers" min="1" required>
+    </div>
+    <div>
+        <label for="maxPassengers">최대 인원:</label>
+        <input type="number" id="maxPassengers" name="maxPassengers" min="1" required>
+    </div>
+    <div>
+        <label for="vehicleInfo">차량 정보:</label>
+        <input type="text" id="vehicleInfo" name="vehicleInfo" placeholder="차량 정보를 입력하세요" required>
+    </div>
+
+    <div>
+        <button type="submit">게시글 제출</button>
+    </div>
+</form>
+</body>
+</html>
